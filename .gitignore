@@ -49,3 +49,4 @@ Thumbs.db
 [QuizWebsite/media](QuizWebsite/media)/
 *.pyc
 __pycache__/
+QuizWebsite\Quiz\migrations
