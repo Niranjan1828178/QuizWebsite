@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+    <link rel="stylesheet" href="{% static 'Quiz/profile.css'%}">
+</head>
+<body>
+    <div class="title_container">
+        <div class="wtitle">Quiz Website</div>
+        <a class="move" href="{% url 'Course' %}"><img class="leaderpic" src="{% static 'Quiz/images/Course.jpg' %}"></a>
+        <a class="move" href="{% url 'Leaderboard' %}"><img class="leaderpic" src="{% static 'Quiz/images/leaderboard.jpg' %}"></a>
+        <a class="logout move" href="{% url 'LogOut' %}"><img class="leaderpic" src="{% static 'Quiz/images/logout.jpg' %}"></a>
+    </div>
+    <div class="profile">
+        <div class="left_container">
+            <div class="pic">
+                <img class="pic" src="{% static 'Quiz/images/Profile.jpg' %}" alt="Profile Picture">
+            </div>
+            <div class="name">{{name}}</div>
+            <a href="{% static 'Edit' %}"><img class="edit" src="{% static 'Quiz/images/edit.jpg' %}"></a>
+        </div>
+        <div class="right_container">
+            <div class="heading">Information</div>
+            <div class="data_container">
+                <div class="box">
+                    <div class="label">Email</div>
+                    <div class="email inbox">{{email}}</div>
+                </div>
+                <div class="box">
+                    <div class="label">Gender</div>
+                    <div class="email inbox">{{gender}}</div>
+                </div>
+                <div class="box">
+                    <div class="label">Age</div>
+                    <div class="email inbox">{{age}}</div>
+                </div>
+            </div>
+            <div class="heading">Status</div>
+            <div class="data_container">
+                <div class="box2">
+                    <div class="label">Score</div>
+                    <div class="score inbox">{{score}}</div>
+                </div>
+                <div class="box2 rankbox">
+                    <div class="label">Rank</div>
+                    <div class="rank inbox">{{rank}}</div>
+                </div>
+           
+            </div>
+        </div>
+    </div>
+</body>
+</html>

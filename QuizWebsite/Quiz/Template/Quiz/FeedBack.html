@@ -1,0 +1,35 @@
+
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+   
+</head>
+<body>
+    <div class="title_container">
+        <div class="wtitle">Quiz Website</div>
+        <a class="move" href="{% url 'Profile' %}"><img class="leaderpic" src="{% static 'Quiz/images/Profile.jpg' %}"></a>
+        <a class="move" href="{% url 'Leaderboard' %}"><img class="leaderpic" src="{% static 'Quiz/images/leaderboard.jpg' %}"></a>
+        <a class="logout move" href="{% url 'LogOut' %}"><img class="leaderpic" src="{% static 'Quiz/images/logout.jpg' %}"></a>
+    </div>
+<form method="POST" action="{% url 'Course' %}"
+    <div class="feedback">
+        <!-- <input type="hidden" name="uid" value="{{ uid}}"> -->
+        <div class="topic child" name="topic">{{topic}}</div>
+        <div class="score child">Score : {{score}}</div>
+        <div class="percent child">Percentage :{{percentage}}% </div>
+        <div class="comment">
+            <div class="improve">Improvement Needed In:</div>
+            <div class="links">
+            {% for im in improvement%}
+            <a class="linked" href="{{im.1}}">{{forloop.counter}}. {{im.0}}</a>
+            {% endfor %}</div>
+        </div>
+        <a class="next" href="{% url 'Course' %}">Next</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+    <link rel="stylesheet" href="{% static 'Quiz/style2.css'%}">
+</head>
+<body>
+  
+        <div class="title_container">
+            <div class="wtitle">Quiz Website</div>
+            <a class="logout" href="{% url 'LogOut' %}">Logout</a>
+        </div>
+        
+
+    <div class="logincontainer">
+        <form action="{% url 'loginUser' %}" method="POST">
+            {% csrf_token %}
+        <div class="details">
+            <h1 class="mode">Login</h1>
+            <label for="username">Username:</label>
+            <input class="input" type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input class="input" type="password" id="password" name="password" required>
+
+            <button class="loginbtn" type="submit">Login</button>
+            </div>
+        <div class="buttons">
+            <div class="child">
+                <p>Don't have an account? </p><a id="register"  href="{% url 'register_user' %}">Register here</a>
+        </div>
+        <div class="child">
+        <p>Forgot your password?</p> <a class="resetpass" href="{% url 'Reset_password' %}">Reset Password</a>
+        </div>
+            </div>
+            </form>
+    </div>
+    <!-- </div> -->
+    
+</body>
+</html>

@@ -1,0 +1,153 @@
+body{
+    padding:0;
+    margin: 0;
+    background-color: rgb(250, 235, 215,0.8);
+}
+h1{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: black;
+    color: white;
+    padding: 2vmin;
+    font-size: 6vmin;
+    font-weight: 600;
+}
+.logincontainer,.Register,.ResetPassword{
+    margin: auto;
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    height: 60vmin;
+    width: 50vmin;
+    border-radius: 3vmin;
+    background-color:rgb(255,255,255,0.6);
+
+}
+.ResetPassword{
+    margin-top: 15vmin;
+    height: 50vmin;
+}
+.d2{
+    border-radius: 3vmin;
+    height: 75vmin;
+}
+.Register{
+    margin-top: 2vmin;
+    height:86vmin;
+}
+.buttons{
+display: flex;
+flex-direction: column;
+height: 10vmin;
+}
+.child{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 0.5vmin;
+    font-size: 2vmin;
+    /* padding: 0; */
+    height: 3vmin;
+    padding-left: 2vmin;
+}
+p,a{
+    font-size: 1.5vmin;
+    padding: 0vmin;
+    text-decoration: none;
+    margin: 0;
+}
+a{
+    color: rgb(3, 156, 244);
+}
+a:hover{
+    cursor: pointer;
+}
+.mode{
+    border-radius: 3vmin 3vmin 0vmin 0vmin;
+}
+.details{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    border-radius: 3vmin 3vmin 0vmin 0vmin;
+}
+button{
+    margin: 2vmin;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+    padding: 1vmin;
+    background-color: black;
+    color: white;
+    border-radius: 1vmin;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3vmin;
+    font-weight: 400;
+    
+}
+label,.rd{
+    margin: 2vmin;
+    margin-left:1vmin;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vmin;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 0;
+    margin-bottom: 1vmin;
+}
+.rd{
+    margin: 1vmin;
+    font-size: 3vmin;
+
+}
+.input{
+    height: 5vmin;
+    margin-top: 0;
+    margin-left: 2.5vmin;
+    border-radius: 1vmin;
+    width: 43vmin;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3vmin;
+    font-weight: 400;
+    padding: auto;
+}
+.title_container{
+    background-color: black;
+    width: 100%;
+    height: 10vmin;
+    display: flex;
+    flex-direction: row;
+}
+.wtitle{
+    width: 90%;
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 5vmin;
+    font-weight: 600;
+    padding: 2vmin;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.logout{
+    background-color:rgb(255,255,255,0.5);
+    border-radius: 2vmin;
+    height: 2.5vmin;
+    padding-bottom: 1.5vmin;
+    padding-left: 0.5vmin;
+    padding-right: 0.5vmin;
+    margin-right: 3vmin;
+    /* justify-content: space-around; */
+    text-align: center;
+    /* width: 5%; */
+    color:black;
+    margin: auto;
+    font-size: 2.5vmin;
+    font-weight: 900;
+    padding-top: 2vmin;
+    text-decoration: none;
+    margin-left: 1vmin;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+    <link rel="stylesheet" href="{% static 'Quiz/home.css'%}">
+</head>
+<body>
+    
+    <div class="title_container">
+        <div class="wtitle">Quiz Website</div>
+        <a class="logout move" href="{% url 'login' %}">Login</a>
+    </div>
+    <div class="Home_container">
+        <div class="left-section">
+            <h2>Test Your<br>Knowledge<br>Now!</h2>
+            <p class="p">Challenge yourself with our interactive quizzes</p>
+        </div>
+        <div class="right-section">
+            <img src="{% static 'Quiz/images/Homegif.gif'%}" alt="Woman reading"> 
+        </div>
+    </div>
+    
+</body>
+</html>

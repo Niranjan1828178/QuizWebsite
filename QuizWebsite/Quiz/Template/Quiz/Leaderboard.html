@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+    <link rel="stylesheet" href="{% static 'Quiz/leaderboard.css'%}">
+</head>
+<body>
+    <div class="title_container">
+        <div class="wtitle">Quiz Website</div>
+        <a class="move" href="{% url 'Course' %}"><img class="leaderpic" src="{% static 'Quiz/images/Course.jpg' %}"></a>
+        <a class="move" href="{% url 'Leaderboard' %}"><img class="leaderpic" src="{% static 'Quiz/images/leaderboard.jpg' %}"></a>
+        <a class="logout move" href="{% url 'LogOut' %}"><img class="leaderpic" src="{% static 'Quiz/images/logout.jpg' %}"></a>
+    </div>
+   <div class="body">
+     
+    <div class="leaderboard">
+        <div class="box">
+            <div class="leaderboard-title">LEADERBOARD</div>
+        </div>
+      
+        <div class="inside">
+            <div class="top-players">
+{% for f in first%}
+            <div class="top-player">
+                <span class="value">{{f.rank}}</span>
+                <div class="player-icon top_icon"> <img src="{% static 'Quiz/images/Profile.jpg'%}">
+                    </div>
+                <p class="player-name">{{f.name}}</p>
+                <p class="player-score">{{f.score}}</p>
+            </div>
+            {% endfor %} 
+        </div> 
+
+{% if userlist %}
+<div class="list">
+        <ul class="leaderboard-list">
+            {% for u in userlist%}
+            <li class="leaderboard-item">
+                <span class="player-rank">{{u.rank}}</span>
+                <!-- <div class="player-info"> -->
+                    <div class="player-icon"> <img src="{% static 'Quiz/images/Profile.jpg'%}">
+                    </div>
+                    <div class="player-name pname">
+                       {{u.name}}
+                    <!-- </div> -->
+                </div>
+                <span class="player-score score1">{{u.score}}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+   </div>
+   <script>
+    let list=document.querySelector(".leaderboard-list")
+  if(list==null)
+  {
+    console.log(list);
+    document.querySelector(".leaderboard").style.height="45vmin";
+  }
+
+  let leaderboard = document.querySelector(".leaderboard");
+  let div=document.querySelector(".leaderboard-title");
+  leaderboard.addEventListener("scroll", function() {
+    let scrollval=leaderboard.scrollTop;
+    if(scrollval>10){
+        div.style.backgroundColor=" rgb(255,255,255,0.7)";
+        div.style.color="black";
+    }
+    else{
+        div.style.backgroundColor="transparent";
+        div.style.color="white";
+    }
+  });
+   </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+
+</head>
+<body>
+    <div class="title_container">
+        <div class="wtitle">Quiz Website</div>
+        <a class="move" href="{% url 'Profile' %}"><img class="leaderpic" src="{% static 'Quiz/images/Profile.jpg' %}"></a>
+        <a class="move" href="{% url 'Leaderboard' %}"><img class="leaderpic" src="{% static 'Quiz/images/leaderboard.jpg' %}"></a>
+        <a class="logout move" href="{% url 'LogOut' %}"><img class="leaderpic" src="{% static 'Quiz/images/logout.jpg' %}"></a>
+    </div>
+    <div class="container">
+        
+        <form id="myForm" action="{% url 'Exam' %}" method="POST">
+            {% csrf_token %}
+           
+            <p name="text" value="{{topic}}" style="text-transform: capitalize; font-size:5vmin; font-weight:900;margin-left:2vmin;">{{topic}} :</p>
+            {% for question in questions %}
+            <div class="row">
+                <p>{{ forloop.counter }}. {{ question.question }}</p>  
+                {% for option in question.options %}
+                    <label>
+                        <input type="radio" name="{{ question.id }}" value="{{ option }}" required> {{ option }}
+                    </label><br>  
+                {% endfor %}
+            </div>
+            {% endfor %}
+            
+
+            <div class="buttons"><button type="submit" class="submit">Submit</button>
+                <button type="button" class="clear" >Clear</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.key === "r") {  // Detect Ctrl + R
+                event.preventDefault();
+                alert("Page refresh is disabled!");
+            }
+            if (event.key === "F5") {  // Detect F5
+                event.preventDefault();
+                alert("Page refresh is disabled!");
+            }
+        });
+    </script>
+    <script src="{% static 'Quiz/quiz.js'%}"></script> 
+</body>
+</html>

@@ -1,0 +1,86 @@
+.profile{
+    margin: auto;
+    width: 100vmin;
+    height: 50vmin;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15vmin;
+    border-radius: 5vmin;
+}
+.left_container{
+    border-radius: 5vmin 0vmin 0vmin 5vmin;
+    width: 30vmin;
+    height: 50vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(246,123,123);
+background: linear-gradient(90deg, rgba(246,123,123,1) 0%, rgba(234,157,78,1) 100%);
+}
+.pic,.edit{
+    margin-top: 3vmin;
+    width: 15vmin;
+    height: 15vmin;
+
+}
+.name{
+    margin-top: 7vmin;
+    font-size: 4vmin;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+}
+.edit{
+    margin-top: 8vmin;
+    width: 2.5vmin;
+    height: 2.5vmin;
+}
+.edit:hover{
+    width: 3.5vmin;
+    height: 3vmin;
+}
+.right_container{
+    border-radius:0vmin 5vmin 5vmin 0vmin;
+    padding-top: 3vmin;
+    width: 70vmin;
+    height: 47vmin;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255,0.5);
+    /* margin-left: 10vmin; */
+}
+.heading{
+    border-radius:0vmin 2vmin 2vmin 0vmin;
+    background: rgb(246,123,123);
+    background: linear-gradient(90deg, rgba(234,157,78,1) 0%,  rgba(246,123,123,1) 100%);
+    margin: 4vmin;
+    margin-bottom: 2vmin;
+    font-size: 4vmin;
+    padding-left: 1vmin;
+    font-weight: 300;
+    border-bottom: solid 2px rgb(0, 0, 0,0.5);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.data_container{
+display: flex;
+flex-direction: row;
+gap: 5vmin;
+margin-left: 5vmin;
+margin-right: 5vmin;
+/* justify-content: space-between; */
+}
+.box,.box2{
+    font-size: 3vmin;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vmin;
+    font-weight: 700;
+}
+.inbox{
+    color: rgba(73, 70, 70, 0.5);
+    font-size: 2.5vmin;
+    padding-left: 1vmin;
+}
+.rankbox{
+    margin-left: 15vmin;
+}

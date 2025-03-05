@@ -1,0 +1,39 @@
+
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+    <link rel="stylesheet" href="{% static 'Quiz/style2.css'%}">
+</head>
+<body>
+    <div class="title_container">
+        <div class="wtitle">Quiz Website</div>
+        <a class="logout" href="{% url 'LogOut' %}">Logout</a>
+    </div>
+    <div class="Register">
+        <form action="{% url 'register_user'%}" method="POST">
+            {% csrf_token %}
+        <h1 class="mode">Registration</h1>
+        <div class="details d2">
+        <label class="rd" for="username">Username:</label>
+        <input class="input" type="text" id="rusername" name="username">
+        <label class="rd" for="email">Email:</label>   
+        <input class="input" type="email" id="email" name="email">
+        <label class="rd" for="password">Password:</label>
+        <input class="input" type="password" id="rpassword" name="password">
+        <label class="rd" for="confirmPassword">Confirm Password:</label>
+        <input class="input" type="password" id="confirmPassword" name="confirmPassword">
+        <label class="rd" for="rememberMe">Gender:</label>
+        <input class="input" type="text" id="gender" name="gender">
+        <label class="rd" for="age">Age:</label>
+        <input class="input" type="number" id="age" name="age">
+        <button class="registerbtn" type="submit">Register</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

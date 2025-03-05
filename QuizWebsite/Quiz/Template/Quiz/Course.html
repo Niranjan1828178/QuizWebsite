@@ -1,0 +1,40 @@
+
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Quiz/style.css'%}">
+   
+</head>
+<body>
+    <div class="title_container">
+        <div class="wtitle">Quiz Website</div>
+        <a class="move" href="{% url 'Profile' %}"><img class="leaderpic" src="{% static 'Quiz/images/Profile.jpg' %}"></a>
+        <a class="move" href="{% url 'Leaderboard' %}"><img class="leaderpic" src="{% static 'Quiz/images/leaderboard.jpg' %}"></a>
+        <a class="logout move" href="{% url 'LogOut' %}"><img class="leaderpic" src="{% static 'Quiz/images/logout.jpg' %}"></a>
+    </div>
+    <div class="info">
+        <div class="greeting child1">
+            Welcome To My Quiz Website
+        </div>
+        <form action="{% url 'Quiz' %}" method="POST">
+            {% csrf_token %}
+            <!-- <input type="hidden" name="uid" value="{{ uid }}">   -->
+        <div class="data">
+            <div class="label child1">Enter Topic:</div>
+            <select class="topics" name="topic">
+                <option value="">Select Topic</option>
+                {% for topic in topics %}
+                    <option value="{{ topic }}">{{ topic }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="start" type="submit">Start</button>
+        </form>
+    </div>
+
+</body>
+</html>
