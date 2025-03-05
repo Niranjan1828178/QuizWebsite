@@ -45,8 +45,8 @@ ENV/
 Thumbs.db
 
 # Project specific
-[QuizWebsite/static](QuizWebsite/static)/
-[QuizWebsite/media](QuizWebsite/media)/
+QuizWebsite/static/
+QuizWebsite/media/
+QuizWebsite/Quiz/migrations/
 *.pyc
 __pycache__/
-QuizWebsite\Quiz\migrations
